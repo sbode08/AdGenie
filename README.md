@@ -1,19 +1,39 @@
 # 🧞 AdGenie - AI Marketing Content Generator
 
-A Streamlit app that uses Google Gemini API to generate engaging marketing content for your products.
+A comprehensive Streamlit app that uses Google Gemini API to generate engaging marketing content for multiple platforms.
 
 ## Features
 
-✨ **AI-Powered Content Generation**
-- Generate viral advertisements designed for social media
-- Create compelling startup-friendly product descriptions
-- Get 10 growth-focused hashtags optimized for reach
+✨ **Multi-Platform Ad Generation**
+- Generate ads for TikTok, Instagram, Google Ads, and LinkedIn
+- Each platform gets optimized content format
+- Same core message, different presentation styles
+
+🎭 **Customizable Content**
+- Choose from multiple tones (Casual, Professional, Energetic, etc.)
+- Target specific audiences (Gen Z, Millennials, Professionals, etc.)
+- AI adapts content based on your selections
+
+👤 **User Authentication System**
+- User registration and login
+- Personal dashboards to save and view generated content
+- Secure session management
+
+💳 **Real Payment Integration**
+- Free tier with 3 ad generations
+- Premium upgrade via Stripe checkout ($9.99/month Basic, $19.99/month Pro)
+- Automatic payment verification and subscription management
+
+🚀 **Premium Social Media Posting**
+- Auto-post generated content to TikTok, Instagram, and LinkedIn
+- One-click publishing to multiple platforms
+- API integration for seamless social media management
 
 🔐 **Admin Dashboard**
 - Password-protected admin panel
-- View all generated content history
-- Manage user list (mock data)
-- Clear all data with confirmation
+- View all user content and analytics
+- Revenue tracking and user management
+- Platform statistics
 
 💾 **Session-Based Storage**
 - No database required
@@ -22,7 +42,7 @@ A Streamlit app that uses Google Gemini API to generate engaging marketing conte
 
 🎨 **Beautiful UI**
 - Dark mode friendly design
-- Responsive layout
+- Responsive layout with tabs for different platforms
 - Emoji-rich interface
 
 ## Setup Instructions
@@ -42,11 +62,83 @@ pip install -r requirements.txt
 3. Copy your API key
 
 ### 4. Configure Secrets
-Edit `.streamlit/secrets.toml` and replace `your-api-key-here` with your actual API key:
+Edit `.streamlit/secrets.toml` and add your API keys:
 
 ```toml
-GEMINI_API_KEY = "your-actual-api-key"
+GEMINI_API_KEY = "your-actual-gemini-api-key"
+
+# Stripe Configuration
+STRIPE_SECRET_KEY = "sk_test_your-stripe-secret-key"
+STRIPE_BASIC_PRICE_ID = "price_your-basic-price-id"
+STRIPE_PRO_PRICE_ID = "price_your-pro-price-id"
+APP_URL = "http://localhost:8501"
+
+# Social Media APIs (Optional - for premium posting feature)
+TIKTOK_API_KEY = "your-tiktok-api-key"
+TIKTOK_ACCESS_TOKEN = "your-tiktok-access-token"
+
+INSTAGRAM_ACCESS_TOKEN = "your-instagram-access-token"
+
+LINKEDIN_ACCESS_TOKEN = "your-linkedin-access-token"
 ```
+
+### 5. Run the App
+```bash
+streamlit run app.py
+```
+
+## Premium Features
+
+### Social Media Auto-Posting
+Premium users can automatically post their generated content to social media platforms:
+
+- **TikTok**: Posts TikTok-style content with engagement hooks
+- **Instagram**: Posts Instagram-optimized captions
+- **LinkedIn**: Posts professional business content
+
+### Setup Social Media APIs
+
+#### TikTok API
+1. Go to [TikTok for Developers](https://developers.tiktok.com/)
+2. Create a new app and get your API keys
+3. Generate access tokens with publishing permissions
+
+#### Instagram API
+1. Set up a Meta Business account
+2. Use the Instagram Graph API
+3. Get access token with publishing permissions
+
+#### LinkedIn API
+1. Go to [LinkedIn Developer Network](https://developer.linkedin.com/)
+2. Create an app and get access token
+3. Request UGC posting permissions
+
+## Usage
+
+1. **Register/Login**: Create an account or login with existing credentials
+2. **Generate Content**: Enter product details, select tone and audience
+3. **View Results**: See ads optimized for each platform in tabs
+4. **Copy Content**: Use the copy buttons to copy content to clipboard
+5. **Premium Posting**: Upgrade to premium to auto-post to social media
+6. **Save Content**: All generations are automatically saved to your dashboard
+7. **Upgrade**: After 3 free uses, upgrade via Stripe checkout for unlimited access
+
+## Demo Account
+
+For testing purposes, you can use:
+- Email: demo@example.com
+- Password: demo123
+
+## Admin Access
+
+Admin password: admin123
+
+## Platform-Specific Formats
+
+- **TikTok**: Short, energetic scripts with trending elements
+- **Instagram**: Visual-focused captions with emojis and storytelling
+- **Google Ads**: Headline (30 chars) + Description (90 chars) optimized for search
+- **LinkedIn**: Professional B2B content focusing on business value
 
 ### 5. Run the App
 ```bash

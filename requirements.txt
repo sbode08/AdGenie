@@ -1,2 +1,6 @@
 streamlit
-google-generativeai
+openai
+stripe
+tweepy
+requests
+facebook-sdk

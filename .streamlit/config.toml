@@ -6,7 +6,14 @@ textColor = "#ffffff"
 font = "sans serif"
 
 [client]
-showErrorDetails = true
+showErrorDetails = false
+toolbarMode = "minimal"
 
 [server]
 maxUploadSize = 200
+headless = true
+port = 8501
+enableXsrfProtection = true
+
+[logger]
+level = "info"
